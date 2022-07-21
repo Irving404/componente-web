@@ -2,7 +2,14 @@ const template = document.createElement("template");
 template.innerHTML = /*html*/`
   <style>
     * {
-      font-size: 200%;
+      font-size: 100%;
+    }
+
+    div{
+      justify-items	:center;
+      align-items	:center;
+
+      margin:100px;
     }
 
     span {
@@ -19,10 +26,35 @@ template.innerHTML = /*html*/`
       background-color: red;
       color: white;
     }
+    input{
+      margin : 20px 0px;
+      width: 200px;
+      background-color: purple;
+      border-radius: 5px;
+      font-size: 20px;
+      text-align: center;
+      color:white;
+    }
+    h1{
+      color:pink;
+      background-color:purple;
+      text-align: center;
+      border-radius:20px;
+    }
+
+    h1:hover{
+      background-color:pink;
+      color:purple;
+    }
+
   </style>
-  <button id="dec">-</button>
-  <span id="count"></span>
-  <button id="inc">+</button>`;
+    <div>
+      <button id="dec">-</button>
+      <span id="count"></span>
+      <button id="inc">+</button><br>
+      <input type="text" value="escribiento...">
+      <h1>Irving</h1>
+    </div>`;
 
 class MyCounter extends HTMLElement {
   constructor() {
@@ -39,7 +71,8 @@ class MyCounter extends HTMLElement {
   }
 
   inc() {
-    this.update(++this.count);
+    this.count = this.count+5;
+    this.update();
   }
 
   dec() {
